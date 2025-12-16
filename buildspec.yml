@@ -8,6 +8,10 @@ phases:
     commands:
       - echo "Building website..."
       - npm install || echo "No dependencies"
+post_build:
+  commands:
+    - echo "Invalidating CloudFront cache..."
+    - aws cloudfront create-invalidation --distribution-id E1F3BW2ED43SK7 --paths "/*"
 artifacts:
   files:
     - '**/*'
