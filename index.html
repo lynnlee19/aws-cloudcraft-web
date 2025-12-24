@@ -153,7 +153,7 @@
     logoutBtn.addEventListener('click', () => {
         if (cognitoUser) {
             cognitoUser.signOut();
-			//https://dgeidtly7rro.cloudfront.net
+			//?? https://dgeidtly7rro.cloudfront.net
             window.location.href = 'https://cloudcraft.auth.us-east-1.amazoncognito.com/login?client_id=6p6d02f7a59q0322ct2els288b&response_type=code&scope=email+openid+profile&redirect_uri=https://dgeidtly7rro.cloudfront.net/index.html'; // 替換為你的登入頁面 URL
         }
     });
