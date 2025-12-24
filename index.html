@@ -160,8 +160,8 @@
 
     // 檢查是否有有效的登入會話
     const checkSession = () => {
-		logLine(); 
         if (!accessToken && !idToken) {
+			logLine(); 
             // 沒有找到 Token，顯示登入頁面
             loginRedirectContainer.classList.remove('hidden');
             profileContainer.classList.add('hidden');
