@@ -104,7 +104,7 @@
             console.log("登入成功！");
             cognitoUser = userPool.getCurrentUser(); // 取得當前使用者
             userEmailDisplay.textContent = userEmail;
-            showProfilePage();
+            //showProfilePage();
         });
     }
 
@@ -160,11 +160,13 @@
 
     // 檢查是否有有效的登入會話
     const checkSession = () => {
+		logLine(); 
         if (!accessToken && !idToken) {
             // 沒有找到 Token，顯示登入頁面
             loginRedirectContainer.classList.remove('hidden');
             profileContainer.classList.add('hidden');
         } else {
+			logLine(); 
             // 找到 Token，顯示個人資料頁面
             loginRedirectContainer.classList.add('hidden');
             profileContainer.classList.remove('hidden');
