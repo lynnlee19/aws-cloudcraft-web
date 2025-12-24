@@ -41,7 +41,7 @@
     // 請替換為你的 Identity Pool ID
     const IDENTITY_POOL_ID = 'us-east-1:6deb464d-2dfa-46c6-82a7-087fbff2c3bb';
     // 請在這裡設定你的 Cognito 託管 UI URL 和回呼 URL
-    const COGNITO_HOSTED_UI_URL = 'https://cloudcraft.auth.us-east-1.amazoncognito.com/login?client_id=6p6d02f7a59q0322ct2els288b&response_type=code&scope=email+openid+profile&redirect_uri=https://dgeidtly7rro.cloudfront.net/auth/callback/index.html';
+    const COGNITO_HOSTED_UI_URL = 'https://cloudcraft.auth.us-east-1.amazoncognito.com/login?client_id=6p6d02f7a59q0322ct2els288b&response_type=code&scope=email+openid+profile&redirect_uri=https://dgeidtly7rro.cloudfront.net/index.html';
 
     const loginRedirectContainer = document.getElementById('login-redirect-container');
     const loginRedirectBtn = document.getElementById('login-redirect-btn');
@@ -148,7 +148,7 @@
         if (cognitoUser) {
             cognitoUser.signOut();
 			//https://dgeidtly7rro.cloudfront.net
-            window.location.href = 'https://cloudcraft.auth.us-east-1.amazoncognito.com/login?client_id=6p6d02f7a59q0322ct2els288b&response_type=code&scope=email+openid+profile&redirect_uri=https://dgeidtly7rro.cloudfront.net/auth/callback/index.html'; // 替換為你的登入頁面 URL
+            window.location.href = 'https://cloudcraft.auth.us-east-1.amazoncognito.com/login?client_id=6p6d02f7a59q0322ct2els288b&response_type=code&scope=email+openid+profile&redirect_uri=https://dgeidtly7rro.cloudfront.net/index.html'; // 替換為你的登入頁面 URL
         }
     });
 
