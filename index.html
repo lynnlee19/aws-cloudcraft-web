@@ -161,12 +161,12 @@
     // 檢查是否有有效的登入會話
     const checkSession = () => {
         if (!accessToken && !idToken) {
-			logLine(); 
+			console.log("沒有找到 Token，顯示登入頁面");
             // 沒有找到 Token，顯示登入頁面
             loginRedirectContainer.classList.remove('hidden');
             profileContainer.classList.add('hidden');
         } else {
-			logLine(); 
+			console.log("idToken:", idToken);
             // 找到 Token，顯示個人資料頁面
             loginRedirectContainer.classList.add('hidden');
             profileContainer.classList.remove('hidden');
