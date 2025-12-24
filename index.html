@@ -84,6 +84,7 @@
         //AWS.config.region = S3_BUCKET_REGION;
         // 可選：也可以用 AWS.config.update({ region: S3_BUCKET_REGION });
         // AWS.config.update({ region: S3_BUCKET_REGION });		
+		AWS.config.update({ region: 'us-ease-1' });
 		
         // 更新 AWS 憑證
         AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -91,19 +92,7 @@
             Logins: {
                 [`cognito-idp.${S3_BUCKET_REGION}.amazonaws.com/${COGNITO_USER_POOL_ID}`]: idToken
             }			
-        }
-		, {
-		   // optionally provide configuration to apply to the underlying service clients
-		   // if configuration is not provided, then configuration will be pulled from AWS.config
-		
-		   // region should match the region your identity pool is located in
-		   region: 'us-east-1',
-		
-		   // specify timeout options
-		   httpOptions: {
-		     timeout: 100
-		   }
-		}																   
+        }															   
 		);
 
         // 確保 AWS 憑證已更新
