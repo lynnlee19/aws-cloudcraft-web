@@ -81,15 +81,16 @@
 
         // 更新 AWS 憑證
         AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-            IdentityPoolId: IDENTITY_POOL_ID,
+            region: 'us-east-1',
+			IdentityPoolId: IDENTITY_POOL_ID,
             Logins: {
                 [`cognito-idp.${S3_BUCKET_REGION}.amazonaws.com/${COGNITO_USER_POOL_ID}`]: idToken
-            }
+            }			
         });
 		
         // 重要：設定全域 region（解決 "Missing region in config"）
         // 在建立 CognitoIdentityCredentials 或呼叫 AWS 服務前，必須指定 region
-        AWS.config.region = S3_BUCKET_REGION;
+        //AWS.config.region = S3_BUCKET_REGION;
         // 可選：也可以用 AWS.config.update({ region: S3_BUCKET_REGION });
         // AWS.config.update({ region: S3_BUCKET_REGION });
 
